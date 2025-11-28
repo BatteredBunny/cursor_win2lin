@@ -23,12 +23,12 @@ Link to [win2xcur] GitHub page.
       
       `<input_folder>/*.cur -o <convert_folder>`
 
-3.     python ./cursor_map.py <convert_folder> <output_folder>
+3.     python ./cursor_map.py -i <convert_folder> -o <output_folder> -n "YourCursorName"
     - depending on your PATH entry use 'python' or 'python3'
-    - the script will ask for cursor pack name, it must match the folder name
+    - the cursor name should match the output folder name for consistency
+    - optionally specify a custom mappings file with `-m <mappings_file>`
 
-4. open `<output_folder>/cursors/default` in an image editor and export to thumbnail.png, save in the same folder
-
+4. open `<output_folder>/cursors/default` in an image editor and export to thumbnail.png, save in `<output_folder>`
 
 ## Destination folder
 Once you have a folder with proper Xcursor files, move it to either:
@@ -39,8 +39,3 @@ Once you have a folder with proper Xcursor files, move it to either:
 # Notes
 - Right now the script creates copies instead of making symbolic links for icons that share the icon data but differ in name. Minor performance overhead for the system.
 - Entries in `mappings.txt` were filled by hand through an eyeball search, mistakes may have been made. Feel free to tweak `mappings.txt` to your liking.
-
-# Project TODO
-- fork win2xcur and integrate with project OR write own cursor conversion code (unlikely lol)
-- integrate thumbnail.png creation into script
-- replace creating copies with symlinks for better system performance
